@@ -25,6 +25,9 @@ const CalculatorForm = ({
           placeholder='Deposit value'
           {...register('depositValue', {
             required: 'This is required',
+            onChange: (event) => {
+              event.target.value = event.target.value.replace(/\D/g, "");
+            }
           })}
         />
         <FormErrorMessage fontSize="12px">
@@ -39,6 +42,9 @@ const CalculatorForm = ({
           placeholder='Purchase price'
           {...register('purchasePrice', {
             required: 'This is required',
+            onChange: (event) => {
+              event.target.value = event.target.value.replace(/\D/g, "");
+            }
           })}
         />
         <FormErrorMessage fontSize="12px">
